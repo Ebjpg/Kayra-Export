@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddDbContext<AppDbContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("Postgres"))
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"))
 );
 
 

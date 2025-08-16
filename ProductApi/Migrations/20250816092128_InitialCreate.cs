@@ -15,12 +15,12 @@ namespace ProductApi.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Name = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: true),
-                    Price = table.Column<decimal>(type: "numeric(18,2)", nullable: false),
-                    Stock = table.Column<int>(type: "integer", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Stock = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
